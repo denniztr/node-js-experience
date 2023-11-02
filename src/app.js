@@ -13,7 +13,7 @@ const server = http.createServer((req, res) => {
     if (params.has('hello')) {
         if (name === '') {
             res.statusCode = 400
-            res.statusMessage ='ok'
+            res.statusMessage ='Error'
             res.setHeader('Content-Type', 'text/plain')
             res.end(`Enter a name`)
 
@@ -21,7 +21,7 @@ const server = http.createServer((req, res) => {
 
         }  else {
             res.statusCode = 200
-            res.statusMessage ='Error'
+            res.statusMessage ='ok'
             res.setHeader('Content-Type', 'text/plain')
             res.end(`Hello ${name}`)
 
@@ -35,7 +35,7 @@ const server = http.createServer((req, res) => {
     res.statusMessage ='ok'
     res.setHeader('Content-Type', 'application/json');
     res.end(getUsers());
-
+    
     return;
    }
 
@@ -52,7 +52,7 @@ const server = http.createServer((req, res) => {
    res.statusMessage ='Error'
    res.setHeader('Content-Type', 'text/plain')
    res.end('')
-   
+
 });
 
 server.listen(port, hostname, () => {
